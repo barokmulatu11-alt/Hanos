@@ -1,0 +1,19 @@
+{
+  "name": "hanos-voyager",
+  "version": "1.0.0",
+  "description": "Voyager / Hanos monochrome illustrated space landing page",
+  "main": "serve.js",
+  "scripts": {
+    "dev": "node serve.js",
+    "start": "node serve.js",
+    "serve": "node serve.js"
+  },
+  "keywords": [
+    "voyager",
+    "hanos",
+    "landing-page",
+    "monochrome"
+  ],
+  "author": "",
+  "license": "ISC"
+}

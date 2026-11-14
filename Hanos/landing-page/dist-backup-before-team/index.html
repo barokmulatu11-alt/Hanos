@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2f1ed">
+  <meta name="description" content="Team Hanos presents Planet X and SPHEREx for the 2026 NASA Space Apps Challenge. An illustrated journey through a changing sky.">
+  <title>Hanos — Planet X and SPHEREx</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/title.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/condensed.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/reference.webp" as="image">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="journey.css">
+  <script src="assets/artwork.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="scrolly.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <svg class="clip-definitions" aria-hidden="true" width="0" height="0"><defs><clipPath id="liquid-clip" clipPathUnits="objectBoundingBox"><path id="liquid-path" d="M .03 .47 C .02 .41 .08 .35 .10 .28 C .12 .22 .16 .18 .20 .19 C .24 .20 .26 .23 .25 .27 C .25 .31 .22 .34 .21 .38 C .19 .42 .21 .47 .21 .52 C .22 .57 .19 .60 .16 .62 C .13 .64 .10 .64 .08 .63 C .04 .62 .02 .59 .03 .55 C .03 .52 .03 .50 .03 .47 Z"/></clipPath></defs></svg>
+  <header class="site-header">
+    <a class="brand" href="#universe" aria-label="Hanos home"><span class="brand-symbol"><img src="assets/hanos-logo.webp" alt="Hanos emblem" width="442" height="507"></span><span class="brand-word">HANOS</span></a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navigation"><span></span><span></span></button>
+    <nav id="navigation" aria-label="Main navigation"><a href="#journey" data-journey-nav>The challenge</a><a href="#chapter-observe" data-journey-nav>The mission</a><a href="#project" data-journey-nav>Our project</a><a href="#resources" data-journey-nav>Resources</a></nav>
+  </header>
+  <main id="main-content" tabindex="-1">
+    <section class="universe" id="universe" aria-label="Explore the space" tabindex="-1">
+      <svg class="blobscape" viewBox="0 0 1600 1300" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-40 280C40 270 65 355 41 415C18 454-6 469-20 519Z"/>
+        <path d="M48 470C31 410 125 350 158 276C194 204 255 170 319 188C382 204 414 235 383 285C363 319 326 343 323 385C318 422 350 476 337 528C324 581 273 604 231 622C167 649 83 638 55 582C43 552 40 516 48 470Z"/>
+        <path d="M1118 277C1099 198 1150 166 1205 151C1266 127 1294 166 1357 124C1414 81 1458 83 1515 96C1564 105 1600 72 1652 89L1670 399C1614 437 1537 447 1485 425C1425 399 1380 447 1313 435C1243 424 1262 367 1201 346C1168 331 1136 323 1118 277Z"/>
+        <path class="flow-blob-left" d="M-48 682C22 616 84 659 158 682C225 702 233 708 292 735C339 758 404 777 427 816C460 873 392 887 406 937C395 989 472 1030 420 1080C360 1140 255 1090 180 1135C105 1173 60 1122-48 1153Z"/>
+        <path class="flow-blob-right" d="M1103 1035C1108 964 1192 942 1251 913C1304 884 1328 834 1377 799C1450 739 1491 777 1566 751C1601 737 1612 722 1650 713L1677 1134C1581 1183 1552 1111 1465 1130C1370 1151 1334 1079 1244 1100C1164 1119 1113 1096 1103 1035Z"/>
+        <path class="flow-blob-mobile" d="M-48 682C22 616 84 659 158 682C225 702 233 708 292 735C339 758 404 777 427 816C460 873 392 887 406 937C395 989 430 1018 395 1040C365 1060 300 1025 245 1050C160 1080 68 1030-48 1060Z"/>
+        <path class="flow-blob-mobile" d="M1103 1035C1108 964 1192 942 1251 913C1304 884 1328 834 1377 799C1450 739 1491 777 1566 751C1601 737 1612 722 1650 713L1677 1060C1580 1100 1530 1040 1450 1060C1370 1090 1300 1020 1225 1050C1160 1070 1113 1070 1103 1035Z"/>
+      </svg>
+      <div class="hero" aria-labelledby="hero-title"><div class="hero-copy"><h1 id="hero-title"><span>EXPLORE</span><span>THE SPACE</span></h1><p class="hero-subtitle">A changing sky. A different perspective.<br> A universe of questions.</p><p class="byline">Team Hanos <span>Planet X &amp; SPHEREx / 2026</span></p><button type="button" class="hero-explore-btn" id="hero-explore-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="skymap-dialog"><span>EXPLORE</span></button></div></div>
+      <button type="button" class="mystery-trigger" aria-label="Read the challenge: Planet X and SPHEREx" aria-expanded="false" aria-controls="mystery-panel"><span class="trigger-caption">A little curiosity?</span><span class="trigger-arrow" aria-hidden="true">↗</span></button>
+      <div class="reveal-surface" id="mystery-panel" role="dialog" aria-labelledby="mystery-title" aria-hidden="true" inert><div class="story-content"><p class="story-eyebrow">NASA Space Apps Challenge / 2026</p><h2 id="mystery-title" tabindex="-1">Planet X<br>&amp; SPHEREx</h2><p class="story-paragraph">A sky full of observations. A chance to see what changes. The challenge is to create a public web tool that makes SPHEREx sky observations easy for anyone to explore and compare over time.</p><a class="story-source" href="https://www.spaceappschallenge.org/2026/challenges/planet-x-and-spherex/" target="_blank" rel="noopener noreferrer">Read the official challenge ↗</a><button class="story-back" type="button"><span aria-hidden="true">←</span> Back to exploring</button></div><button class="close-story" type="button" aria-label="Close challenge"><span aria-hidden="true">×</span></button></div>
+      <div class="illustrations" aria-hidden="true"><space-art class="art rock rock-one" name="rock"></space-art><space-art class="art rock rock-two" name="pebble"></space-art><span class="sparkle star-one"></span><span class="sparkle star-two"></span><span class="sparkle star-three"></span><span class="sparkle star-four"></span><span class="sparkle star-five"></span><span class="sparkle star-six"></span><span class="sparkle star-seven"></span></div>
+      <a class="scroll-invitation" href="#journey"><span>Scroll into the unknown</span><span class="scroll-line" aria-hidden="true">↓</span></a>
+    </section>
+    <section class="journey" id="journey" aria-labelledby="journey-title" data-active="0" tabindex="-1">
+      <div class="journey-introduction"><p class="field-label">Team Hanos / NASA Space Apps Challenge 2026</p><h2 id="journey-title">There’s a story in the sky.<br><em>Let’s look a little closer.</em></h2><p>Planet X and SPHEREx. Three steps into a changing universe.</p></div>
+      <div class="journey-layout">
+        <div class="journey-stage"><div class="journey-hud"><span class="field-label">A field guide to a changing sky</span><span class="scene-counter"><span id="chapter-current">01</span><span class="counter-divider"> / </span>03</span></div>
+          <div class="journey-scenes" aria-hidden="true">
+            <div class="scene scene-observe" data-scene="0"><div class="scene-blob"></div><img class="orbit-map" src="assets/orbit-map.svg" alt="" width="640" height="640"><div class="scene-art moon-traveller"><space-art name="moon"></space-art></div><span class="scene-star scene-star-a"></span><span class="scene-star scene-star-b"></span><span class="scene-coordinate">A new way of seeing.</span></div>
+            <div class="scene scene-orbit" data-scene="1"><div class="scene-blob"></div><img class="orbit-map" src="assets/orbit-map.svg" alt="" width="640" height="640"><div class="scene-art saturn-traveller"><space-art name="saturn"></space-art></div><div class="scene-art pebble-traveller"><space-art name="pebble"></space-art></div><span class="scene-star scene-star-a"></span><span class="scene-star scene-star-b"></span><span class="scene-coordinate">A different point of view.</span></div>
+            <div class="scene scene-wonder" data-scene="2"><div class="scene-blob"></div><img class="orbit-map" src="assets/orbit-map.svg" alt="" width="640" height="640"><div class="scene-art astronaut-traveller"><space-art name="astronaut"></space-art></div><div class="scene-art ufo-traveller"><space-art name="ufo"></space-art></div><span class="scene-star scene-star-a"></span><span class="scene-star scene-star-b"></span><span class="scene-coordinate">Leave room for a question.</span></div>
+          </div>
+          <div class="journey-instruments"><nav class="chapter-navigation" aria-label="Story chapters"><a href="#chapter-observe" data-chapter-link="0" aria-current="step"><span>01</span> Observe</a><a href="#chapter-orbit" data-chapter-link="1"><span>02</span> Compare</a><a href="#chapter-wonder" data-chapter-link="2"><span>03</span> Investigate</a></nav><div class="journey-progress" id="journey-progress" role="progressbar" aria-label="Journey progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div></div>
+        </div>
+        <div class="journey-chapters">
+          <article class="journey-chapter" id="chapter-observe" data-chapter="0" aria-labelledby="observe-title" tabindex="-1"><div class="chapter-read"><p class="chapter-kicker"><span>01</span> Meet the mission</p><h3 id="observe-title">Look a little<br><em>closer.</em></h3><p>Some of the universe’s most interesting clues lie beyond the light our eyes can see.</p><p>NASA’s SPHEREx observes the whole sky in 102 infrared wavelengths, offering a richer way to explore the objects and material that fill it.</p><a class="chapter-source" href="https://www.jpl.nasa.gov/news/nasas-spherex-observatory-completes-first-cosmic-map-like-no-other/" target="_blank" rel="noopener noreferrer">Explore the mission at NASA JPL ↗</a></div></article>
+          <article class="journey-chapter" id="chapter-orbit" data-chapter="1" aria-labelledby="orbit-title" tabindex="-1"><div class="chapter-read"><p class="chapter-kicker"><span>02</span> A shift in perspective</p><h3 id="orbit-title">The clue is<br><em>in the change.</em></h3><p>One observation captures a moment. Comparing observations offers a way to notice what has shifted.</p><p>The Planet X and SPHEREx challenge asks for an accessible web tool that lets people explore sky observations and compare them over time.</p><a class="chapter-source" href="https://www.spaceappschallenge.org/2026/challenges/planet-x-and-spherex/" target="_blank" rel="noopener noreferrer">Read the challenge ↗</a></div></article>
+          <article class="journey-chapter" id="chapter-wonder" data-chapter="2" aria-labelledby="wonder-title" tabindex="-1"><div class="chapter-read"><p class="chapter-kicker"><span>03</span> Beyond the familiar</p><h3 id="wonder-title">Leave room<br><em>for wonder.</em></h3><p>Planet X remains a possibility to investigate, rather than a confirmed discovery.</p><p>A changing point of light invites a closer look. Making observations easier to inspect is a starting point; evidence is what comes next.</p><a class="chapter-source" href="https://science.nasa.gov/solar-system/planet-x/" target="_blank" rel="noopener noreferrer">The science behind Planet X ↗</a></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="project-section" id="project" aria-labelledby="project-title" tabindex="-1">
+      <p class="field-label">Team Hanos</p>
+      <h2 id="project-title">Our project.</h2>
+      <div class="project-space" aria-label="Team project details">
+        <p class="project-summary">An interactive sky observation explorer comparing multi-epoch infrared surveys for NASA's SPHEREx mission.</p>
+        <button type="button" class="project-btn" id="open-sky-map" aria-haspopup="dialog" aria-expanded="false" aria-controls="skymap-dialog">
+          <span>open Sky Map</span>
+          <span class="project-btn-icon" aria-hidden="true">↗</span>
+        </button>
+      </div>
+    </section>
+    <dialog class="skymap-modal" id="skymap-dialog" aria-labelledby="skymap-title" aria-modal="true">
+      <div class="skymap-container">
+        <div class="skymap-header">
+          <div>
+            <p class="skymap-kicker">SPHEREx / NASA Open Data Archive</p>
+            <h3 id="skymap-title">All-Sky Infrared Map</h3>
+          </div>
+          <button type="button" class="skymap-close" id="close-skymap" aria-label="Close Sky Map"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="skymap-viewport">
+          <img class="skymap-projection" src="assets/orbit-map.svg" alt="SPHEREx Celestial Orbit Sky Map" width="640" height="640">
+          <div class="skymap-overlay-points" aria-hidden="true">
+            <span class="sky-point point-1" title="Candidate X1 (RA 04h 26m / Dec +18°)"><span class="point-pulse"></span></span>
+            <span class="sky-point point-2" title="Infrared Transient IR-88"><span class="point-pulse"></span></span>
+            <span class="sky-point point-3" title="Galactic Plane Survey Reference"><span class="point-pulse"></span></span>
+          </div>
+          <div class="skymap-hud">
+            <div class="hud-item"><span class="hud-label">Survey:</span> SPHEREx 102 Bands</div>
+            <div class="hud-item"><span class="hud-label">Epoch:</span> 2026.1 / 2026.2 Differential</div>
+            <div class="hud-item"><span class="hud-label">Coverage:</span> 100% Celestial Sphere</div>
+          </div>
+        </div>
+        <div class="skymap-footer">
+          <p class="skymap-note">View public raw observations and calibrated spectra in the official NASA/IPAC Infrared Science Archive.</p>
+          <a class="skymap-ext-link" href="https://irsa.ipac.caltech.edu/Missions/spherex.html" target="_blank" rel="noopener noreferrer">Explore Raw Archive at NASA IPAC ↗</a>
+        </div>
+      </div>
+    </dialog>
+    <section class="journey-outro" id="resources" aria-labelledby="outro-title" tabindex="-1"><span class="outro-star" aria-hidden="true">✦</span><p class="field-label">A little curiosity. An infinite universe.</p><h2 id="outro-title">Keep a little space<br><em>for the unexpected.</em></h2><p>One question leads to another. Where will yours take you?</p><div class="outro-actions"><a href="#universe" class="outro-button" data-open-mystery>Explore the challenge <span aria-hidden="true">↗</span></a><a href="#journey" class="outro-repeat">Take the journey again <span aria-hidden="true">↑</span></a></div><div class="outro-resources"><a href="https://science.nasa.gov/mission/spherex/" target="_blank" rel="noopener noreferrer">SPHEREx mission ↗</a><a href="https://irsa.ipac.caltech.edu/Missions/spherex.html" target="_blank" rel="noopener noreferrer">Explore the open data ↗</a></div><footer class="journey-colophon"><span>HANOS</span><span>Planet X &amp; SPHEREx / NASA Space Apps 2026</span><a href="#universe">Back to the stars ↑</a></footer></section>
+  </main>
+  <div class="paper-grain" aria-hidden="true"></div><div class="cursor-ring" aria-hidden="true"></div><p class="sr-only" id="nav-status" role="status"></p>
+</body>
+</html>
