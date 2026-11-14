@@ -3,17 +3,15 @@ const fs = require('fs');
 const path = require('path');
 
 const candidates = [
-  path.resolve(__dirname, 'Hanos', 'landing-page', 'dist'),
-  path.resolve(__dirname, 'landing-page', 'dist'),
   path.resolve(__dirname, 'dist'),
-  path.resolve(process.cwd(), 'Hanos', 'landing-page', 'dist'),
-  path.resolve(process.cwd(), 'landing-page', 'dist'),
-  path.resolve(process.cwd(), 'dist')
+  path.resolve(process.cwd(), 'dist'),
+  path.resolve(__dirname, 'landing-page', 'dist'),
+  path.resolve(__dirname, 'Hanos', 'landing-page', 'dist')
 ];
 
 let DIST_DIR = candidates.find(dir => fs.existsSync(dir));
 if (!DIST_DIR) {
-  DIST_DIR = path.resolve(__dirname, 'Hanos', 'landing-page', 'dist');
+  DIST_DIR = path.resolve(__dirname, 'dist');
 }
 
 const MIME_TYPES = {
