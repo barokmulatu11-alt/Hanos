@@ -283,6 +283,66 @@
   .roster-name{font-size:19px}
   .roster-role{font-size:10px;letter-spacing:.09em}
 }
+
+/* Official Team Group Photo Showcase */
+.team-group-showcase{
+  margin:clamp(48px, 8svh, 88px) auto 0;
+  max-width:960px;
+  padding:0 clamp(16px, 3vw, 24px);
+}
+.team-group-figure{
+  margin:0;
+  position:relative;
+  border-radius:clamp(16px, 2.2vw, 26px);
+  background:rgba(255, 255, 255, 0.04);
+  padding:clamp(10px, 1.4vw, 16px);
+  border:1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:0 24px 64px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+.team-group-frame{
+  overflow:hidden;
+  border-radius:clamp(12px, 1.8vw, 20px);
+  position:relative;
+}
+.team-group-frame img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+  transition:transform .7s var(--ease);
+}
+.team-group-figure:hover .team-group-frame img{
+  transform:scale(1.02);
+}
+.team-group-caption{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:clamp(12px, 1.8vw, 18px) clamp(8px, 1.2vw, 14px) 4px;
+}
+.team-group-caption .caption-tag{
+  font-family:'Hanos Condensed',sans-serif;
+  font-size:clamp(11px, .9vw, 13px);
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--accent-text);
+}
+.team-group-caption .caption-title{
+  font-family:'Hanos Serif',Georgia,serif;
+  font-size:clamp(15px, 1.3vw, 18px);
+  font-weight:700;
+  letter-spacing:-.02em;
+}
+@media(max-width:767px){
+  .team-group-caption{
+    flex-direction:column;
+    gap:6px;
+    align-items:flex-start;
+  }
+}
 .scene-star{
   position:absolute;
   width:27px;
@@ -1354,3 +1414,86 @@ body:not(.page-challenge) .scene::before{display:none}
 .roster-photo{background:var(--disc, #fff)}
 .dock-slot{border-color:rgba(var(--ring-rgb, 120,120,120), .55)}
 .chapter-navigation a[aria-current="step"] .dock-slot{border-style:solid;border-color:rgb(var(--ring-rgb, 120,120,120))}
+
+/* ============ PHONE TEAM CARDS ============
+   On phones a pinned portrait strip left the chapter text hidden or cut off most of the time, so
+   below 768px there is no pinned stage: each member is a card with their portrait on top. */
+.chapter-portrait{display:none}
+@media(max-width:767px){
+  .journey-stage{display:none}
+  .journey-layout{display:block}
+  .journey-chapters{padding:0 7vw 12px}
+  .journey-chapter{
+    display:block;
+    min-height:0;
+    padding:52px 0 48px;
+    scroll-margin-top:12px;
+    border-top:1px solid var(--hairline-soft);
+  }
+  .journey-chapter:first-child{border-top:0;padding-top:28px}
+  .chapter-read{max-width:460px;margin:0 auto;text-align:center}
+  .chapter-read>p:not(.chapter-kicker){margin-left:auto;margin-right:auto}
+  .chapter-kicker{justify-content:center}
+  .member-links{justify-content:center}
+
+  .chapter-portrait{
+    display:block;
+    position:relative;
+    width:min(62vw, 250px);
+    aspect-ratio:1;
+    margin:0 auto 40px;
+  }
+  .chapter-portrait:before,
+  .chapter-portrait:after{
+    content:'';
+    position:absolute;
+    inset:-9%;
+    border-radius:50%;
+    pointer-events:none;
+  }
+  .chapter-portrait:before{border:1px solid rgba(var(--ring-rgb), .26)}
+  .chapter-portrait:after{
+    background:conic-gradient(from 0deg,
+      rgba(var(--ring-rgb), 0) 0deg,
+      rgba(var(--ring-rgb), 0) 40deg,
+      rgba(var(--ring-rgb), .95) 330deg,
+      rgba(var(--ring-rgb), 1) 360deg);
+    -webkit-mask:radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2.5px));
+    mask:radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2.5px));
+    transform:rotate(-40deg);
+  }
+  .cp-disc{
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    overflow:hidden;
+    background:var(--disc, #fff);
+    box-shadow:0 0 0 1px rgba(var(--ring-rgb), .12), 0 30px 50px -28px rgba(var(--ring-rgb), .6);
+  }
+  .cp-disc img{
+    position:absolute;
+    left:50%;
+    top:50%;
+    display:block;
+    width:auto;
+    height:var(--fit, 72%);
+    transform:translate(-50%, -50%);
+    -webkit-mask-image:linear-gradient(to bottom, #000 84%, transparent 100%);
+    mask-image:linear-gradient(to bottom, #000 84%, transparent 100%);
+  }
+  .roster-name{font-size:clamp(16px, 4.6vw, 19px)}
+}
+
+/* PHONE TAP TARGETS: invisible padding so text links are comfortable to hit (>=44px), same look */
+@media(max-width:767px){
+  .chapter-source,.outro-repeat,.outro-resources>a,.journey-colophon>a,.skymap-ext-link,.story-source,.story-back{position:relative}  /* .scroll-invitation is already absolute, so it needs no change */
+  .chapter-source:before,.outro-repeat:before,.outro-resources>a:before,.journey-colophon>a:before,.scroll-invitation:before,.skymap-ext-link:before,.story-source:before,.story-back:before{
+    content:'';
+    position:absolute;
+    left:-8px;
+    right:-8px;
+    top:50%;
+    height:44px;
+    transform:translateY(-50%);
+  }
+}

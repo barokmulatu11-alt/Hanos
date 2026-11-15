@@ -762,3 +762,54 @@ html.wipe-in::before{
 :root[data-theme="night"] .hero-explore-btn{color:#8fb7ff;border-color:#8fb7ff}
 :root[data-theme="night"] .hero-explore-btn:hover{color:#c4d8ff;border-color:#c4d8ff}
 .story-full{margin-top:14px}
+
+/* ============ PHONE HERO + PANEL ============
+   1. The tall left blob sat behind the subtitle and made its first letters unreadable.
+   2. "A little curiosity?" was a rotated caption on top of the title; it is now a small pill under the button.
+   3. While the panel is open that pill hides, and the close button sits inside the panel (it used to be
+      outside the clipped shape, so it was invisible and could not be tapped). */
+@media(max-width:767px){
+  .blobscape path:nth-child(2){display:none}
+
+  .mystery-trigger{
+    left:50%;
+    top:max(67%, 478px);
+    width:auto;
+    height:auto;
+    transform:translateX(-50%);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 20px;
+    border:1px solid var(--hairline);
+    border-radius:999px;
+    color:var(--text-soft);
+    white-space:nowrap;
+  }
+  .trigger-caption,
+  .mystery-trigger:hover .trigger-caption,
+  .mystery-trigger:focus-visible .trigger-caption{
+    position:static;
+    transform:none;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    opacity:1;
+  }
+  .trigger-arrow,
+  .mystery-trigger:hover .trigger-arrow,
+  .mystery-trigger:focus-visible .trigger-arrow{position:static;transform:none;font-size:15px;opacity:1}
+  .mystery-trigger:focus-visible{outline:2px solid var(--ring);outline-offset:3px}
+  .story-open .mystery-trigger,.story-transition .mystery-trigger{opacity:0;visibility:hidden}
+
+  .close-story{top:23%;right:6%}
+  .story-eyebrow{padding-right:54px}
+}
+
+/* phone tap targets: 44px minimum for the header controls and the hero button */
+@media(max-width:767px){
+  .theme-toggle{width:44px;height:44px}
+  .brand{min-height:44px}
+  .hero-explore-btn{min-height:44px;padding-top:10px;padding-bottom:10px}
+}

@@ -37,6 +37,8 @@
   const ARC = 28;               // px of lift in the middle of each flight
 
   const smooth = window.hanosSmooth;
+  // Below 768px the team section is a stack of cards with no pinned stage, so nothing docks or gathers.
+  const phone = matchMedia('(max-width: 767px)');
   const clamp = (v, lo = 0, hi = 1) => Math.max(lo, Math.min(hi, v));
   const lerp = (a, b, t) => a + (b - a) * t;
   const ease = t => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
@@ -58,11 +60,12 @@
     return { el, img, state: 'hidden', anims: null, lastKey: '' };
   });
   document.body.append(layer);
-  roster.classList.add('gather-armed');
+  if (!phone.matches) roster.classList.add('gather-armed');
 
   /* ---------- geometry (measured once, re-measured on resize / fonts / layout change) ---------- */
   let G = null;
   const measure = () => {
+    if (phone.matches) return;
     const sx = window.scrollX, sy = window.scrollY, vh = window.innerHeight;
     const st = stage.getBoundingClientRect();
     const ly = layout.getBoundingClientRect();
@@ -153,7 +156,7 @@
   /* ---------- per-frame work ---------- */
   let lastY = -1;
   const render = () => {
-    if (!G) return;
+    if (!G || phone.matches) return;
     const y = window.scrollY;
     if (y === lastY) return;
     lastY = y;
@@ -206,5 +209,19 @@
   window.addEventListener('load', measure, { once: true });
   document.fonts?.ready.then(measure);
   if (typeof ResizeObserver !== 'undefined') new ResizeObserver(() => measure()).observe(document.body);
-  measure();
+  const applyMode = () => {
+    layer.hidden = phone.matches;
+    if (phone.matches) {
+      roster.classList.remove('gather-armed', 'is-gathered');
+      flyers.forEach(f => { show(f, false); f.state = 'hidden'; if (f.anims) { f.anims.forEach(a => a.cancel()); f.anims = null; } });
+      portraits.forEach(p => p.classList.remove('is-lifted'));
+      members.forEach(m => { m.style.removeProperty('--g'); m.style.removeProperty('--g2'); });
+    } else {
+      roster.classList.add('gather-armed');
+      lastY = -1;
+      measure();
+    }
+  };
+  phone.addEventListener('change', applyMode);
+  applyMode();
 })();
